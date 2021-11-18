@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -14,6 +13,8 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.MediaController;
+
+import androidx.annotation.Nullable;
 
 import com.qiniu.shortvideo.app.R;
 import com.qiniu.shortvideo.app.utils.ToastUtils;

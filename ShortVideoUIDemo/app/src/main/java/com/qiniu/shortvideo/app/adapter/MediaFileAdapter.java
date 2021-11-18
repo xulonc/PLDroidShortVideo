@@ -1,9 +1,10 @@
 package com.qiniu.shortvideo.app.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Paint;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -93,7 +94,7 @@ public class MediaFileAdapter extends RecyclerView.Adapter<MediaFileAdapter.Medi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final MediaItemViewHolder mediaItemViewHolder, final int position) {
+    public void onBindViewHolder(@NonNull final MediaItemViewHolder mediaItemViewHolder, @SuppressLint("RecyclerView") final int position) {
         final MediaFile mediaFile = mDataSource.get(position);
         Glide.with(mContext)
                 .load(mediaFile.getThumbPath())

@@ -9,9 +9,6 @@ import android.graphics.Point;
 import android.opengl.GLSurfaceView;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.IntDef;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,8 +79,11 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static com.qiniu.shortvideo.app.activity.VideoEditActivity.EDITOR_MODE.CAPTION;
-import static com.qiniu.shortvideo.app.activity.VideoEditActivity.EDITOR_MODE.GIF_STICKER;
+
+
+import androidx.annotation.IntDef;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class VideoEditActivity extends AppCompatActivity implements
         PLVideoSaveListener,
@@ -102,12 +102,16 @@ public class VideoEditActivity extends AppCompatActivity implements
         PAUSED,
     }
 
-    @IntDef({GIF_STICKER, CAPTION})
-    @Retention(RetentionPolicy.SOURCE)
+
     public @interface EDITOR_MODE {
         int GIF_STICKER = 0;
         int CAPTION = 1;
     }
+    public enum VideoEditActivity_MODE {
+        GIF_STICKER,
+        CAPTION,
+    }
+
     private int mCurrentEditorMode = -1;
 
     private ViewOperator mViewOperator;
@@ -588,7 +592,7 @@ public class VideoEditActivity extends AppCompatActivity implements
         mViewOperator.showBottomView(mGifBottomView);
         mIsGifEditing = true;
         mShortVideoEditor.seekTo(0);
-        mCurrentEditorMode = GIF_STICKER;
+        mCurrentEditorMode = EDITOR_MODE.GIF_STICKER;
         // 在编辑界面下可以点击贴纸
         setGifStickersClickable(true);
     }

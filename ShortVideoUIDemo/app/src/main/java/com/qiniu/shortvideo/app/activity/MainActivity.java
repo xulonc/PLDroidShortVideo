@@ -3,11 +3,12 @@ package com.qiniu.shortvideo.app.activity;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.qiniu.shortvideo.app.R;
 import com.qiniu.shortvideo.app.utils.Config;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements OnBannerListener 
         mImageBanner.stopAutoPlay();
     }
 
+    //视频录制
     public void onClickVideoRecording(View v) {
         if (!isPermissionOK()) {
             return;
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements OnBannerListener 
         startActivity(intent);
     }
 
+    //素材合拍
     public void onClickVideoMix(View v) {
         if (!isPermissionOK()) {
             return;
@@ -89,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements OnBannerListener 
         startActivity(intent);
     }
 
+    // 视频编辑
     public void onClickVideoEdit(View v) {
         if (!isPermissionOK()) {
             return;
@@ -97,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements OnBannerListener 
         intent.putExtra(MediaSelectActivity.TYPE, MediaSelectActivity.TYPE_VIDEO_EDIT);
         startActivity(intent);
     }
-
+    // 视频拼图
     public void onClickVideoPuzzle(View v) {
         if (!isPermissionOK()) {
             return;
@@ -106,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements OnBannerListener 
         startActivity(intent);
     }
 
+    // 素材拼接
     public void onClickVideoSplice(View v) {
         if (!isPermissionOK()) {
             return;
